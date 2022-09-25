@@ -6,5 +6,6 @@ const data = [
     {id: 5, name: 'Hayotillo', status: 'Doctor'},
     {id: 6, name: 'Shohsanam', status: 'Student'},
     {id: 7, name: 'Farangiz', status: 'programmer'},
+    {id: 8, name: 'Asadbek', status: 'programmer'},
 ]
 export {data}

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {data} from '../data'
+import './table.css'
 
 class Table extends Component {
     constructor(props) {
@@ -7,7 +8,7 @@ class Table extends Component {
         this.state = {
             name: '',
             surname: '',
-            student: data,
+            student: data
         }
     }
     render() {
