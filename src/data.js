@@ -1,6 +1,6 @@
-import {ReactComponent as close} from './assets/icons/Vector.svg'
-import minus from './assets/images/minus.jpg'
-import img1 from './assets/images/home3.png'
+import {ReactComponent as close} from './assets/icons/icon-close.svg'
+import {ReactComponent as minus} from './assets/icons/icon-minus.svg'
+import img1 from './assets/images/img1.jpg'
 
 export const data = [
     {id: 1, image: img1, alt: 'olma', icon: close,  color: 'red', title: 'Olma'},
