@@ -4,6 +4,7 @@ import './index.css';
 import Button from './Button/Button';
 import Comp from './Component/Comp';
 import Theme from './Theme';
+import Edit from './Edit/index'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,6 +17,7 @@ root.render(
     <Button>Log out</Button>
     <Button bg='crimson' width='100%' color='white'>Register</Button>
     <Theme />
+    <Edit />
   </React.StrictMode>
 );
 
