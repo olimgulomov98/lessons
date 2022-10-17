@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import { Root } from './root';
-
+import { Controlled } from './Components/Controlled';
+import { Parent } from './Components/Parent';
+import { Uncontrolled } from './Components/Uncontrolled';
+import './index'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <h1>Dars</h1>
-    <Root />
+    <div style={{display: 'flex'}}>
+      <Controlled />
+      <Uncontrolled />
+    </div>
   </React.StrictMode>
 );
 
