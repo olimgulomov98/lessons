@@ -5,17 +5,26 @@ import { useState } from 'react'
 export const Fetch = () => {
     const [data, setData] = useState([])
     
-    useEffect(() => {
-        fetch('https://houzing-app.herokuapp.com/api/v1/houses/list', {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`
-            }
+    
+    async function fetchData() {
+        await fetch('https://houzing-app.herokuapp.com/api/v1/houses/list',{
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+        }
         }).then((response) => response.json())
             .then((response) => setData(response?.data))
+    }
 
+        
+    useEffect(() => {
+        fetchData()
     }, [])
-    console.log(data, 'data')
+
+    const deleteHouse = (id) => {
+        localStorage.setItem('delete', id)
+        fetchData()
+    }
   return (
     <div>
         <h4>Fetch</h4>
@@ -25,6 +34,8 @@ export const Fetch = () => {
                     <div key={value?.id}>
                         {value?.id} - {value?.name} -  {value?.country} -  {value?.houseDetails?.room} -  {value?.user?.name} - {value?.user?.lastname} - {value?.user?.email} - 
                         <img width={'100px'} src={value?.attachments[0].imgPath} alt='img' />
+                        <button onClick={() => deleteHouse(value.id)}>delete {value.id}</button>
+                        <button onClick={() => localStorage.setItem('edit', value.id) }>edit {value.id}</button>
                     </div>
                 )
             })
